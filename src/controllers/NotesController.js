@@ -21,7 +21,7 @@ class NotesController {
       }
     })
 
-    // Inserção dos links na tabela 'links'.
+    // Inserção dos links na tabela 'links'. ola mundo
     await knex('links').insert(linksInsert)
 
     // Mapeamento das tags para serem inseridas na tabela 'tags'.
