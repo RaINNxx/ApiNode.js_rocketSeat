@@ -37,7 +37,7 @@ class NotesController {
     await knex('tags').insert(tagsInsert)
 
     // Resposta JSON indicando sucesso na criação da nota.
-    response.json()
+   return  response.json()
   }
 
   // Método assíncrono para buscar e exibir uma nota específica com suas tags e links.
