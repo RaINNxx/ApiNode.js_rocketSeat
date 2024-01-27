@@ -4,7 +4,7 @@ class NotesController {
   // Método assíncrono para criar uma nova nota com títulos, descrição, tags e links.
   async create(request, response) {
     const { title, description, tags, links } = request.body
-    const { user_id } = request.params
+    const  user_id  = request.user.id
 
     // Inserção dos dados principais da nota na tabela 'notes'.
     const [note_id] = await knex('notes').insert({
@@ -72,7 +72,9 @@ class NotesController {
 
   // Método assíncrono para buscar e retornar notas com base em filtros.
   async index(request, response) {
-    const { title, user_id, tags } = request.query
+    const { title, tags } = request.query
+
+    const user_id = request.user.id
 
     let notes
 
